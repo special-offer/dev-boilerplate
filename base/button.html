@@ -1,0 +1,73 @@
+<!-- Button
+    inputs:
+    - destination link
+    - target (same as target?)
+    - text
+    - style (Primary, Secondary, Tertiary, etc) -->
+
+
+<!-- HTML -->
+
+<button type="button" href="/destination-link">Text</button>
+
+<!-- Liquid -->
+
+<button type="button" href="{{/destination-link}}">
+    {{ text }}
+</button>
+
+<!-- Vue -->
+
+<template>
+    <button @click="buyNow" class="btn w-40 appear h-12">
+        Buy Now
+    </button>
+</template>
+
+<script>
+import { mapState, mapActions } from 'vuex'
+
+export default {
+    name: 'BuyNowButton',
+    props: {
+        variant: {
+            type: Object
+        },
+        quantity: {
+            type: Number
+        },
+        shopifyVariants: {
+            type: Array
+        },
+        noSelectedVariant: {
+            type: Boolean
+        },
+        showQuickBuySelector: {
+            type: Function
+        }
+    },
+    computed: {
+        ...mapState('cart', ['isAdding', 'checkout']),
+    },
+     methods: {
+        ...mapActions('cart', ['addLineItem']),
+        async buyNow() {
+
+            if (this.noSelectedVariant) return this.showQuickBuySelector ();
+
+            const selectedVariant = this.shopifyVariants.find(v => v.title === this.variant.store.title);
+
+            if (selectedVariant) {
+                await this.addLineItem({
+                    variantId: selectedVariant.id,
+                    quantity: this.quantity || 1
+                });
+
+            
+                window.location.href = this.checkout.webUrl;
+            }
+            
+        }
+    },
+}
+</script>
