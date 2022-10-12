@@ -1,21 +1,344 @@
-<!-- Accordion Group -->
-<!-- Text Marquee -->
-<!-- Text Long Form -->
-<!-- Block Quote -->
-<!-- Media -->
-<!-- Contact form -->
-<!-- Newsletter Signup -->
-<!-- CTA Group -->
-<!-- HR -->
-<!-- Nav Bar -->
-<!-- Rich Text Editor -->
-<!-- Tab Group -->
+<!-- Text Long Form 
+    inputs:
+    - text (rich text)
+    - (width?)
+-->
+<div class="text-long-form">
+    <p>Text goes here</p>
+</div>
+
+
+<!-- Block Quote 
+    inputs:
+    - text
+-->
+<div class="block-quote">
+    <div class="spacer"></div>
+    <p>Text goes here</p>
+</div>
+
+
+<!-- Rich Text Editor (RTE)
+    inputs:
+    - text
+    - (width)
+-->
+<div class="text-long-form">
+    <p>Text goes here</p>
+</div>
+
+
+<!-- Text Marquee 
+    inputs:
+    - text (rich text)
+    - speed
+-->
+<div class="section">
+    <div class="block">
+        <span>Text goes here</span>
+    </div>
+</div>
+
+
+<!-- Media 
+    inputs: 
+    - src
+    - alt text
+-->
+<div class="media">
+    <img src="" alt="media description">
+</div>
+
+
+<!-- Contact form 
+    inputs:
+    - labels
+    - placeholders
+    - destination email
+-->
+<form class="contact-form" action="{{ submission link }}" method="get" target="_blank">
+    <label for="first-name">First name:</label>
+    <input type="text" id="first-name" name="first-name" placeholder="First name">
+    <label for="last-name">Last name:</label>
+    <input type="text" id="last-name" name="last-name" placeholder="Last name">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" placeholder="email">
+    <label for="contact-body">Message:</label>
+    <input type="text" id="contact-body" name="contact-body">
+
+    <label for="newsletter-signup">Sign up for newsletter:</label>
+    <input type="checkbox" id="newsletter-signup" name="newsletter signup"> 
+
+    <input type="submit">
+    <!-- OR -->
+    <button type="submit">Submit</button>
+</form>
+
+
+<!-- Newsletter Signup 
+    inputs:
+    - labels
+    - placeholders
+    - (destination / config information)
+-->
+<form>
+    <label for="first-name">First name:</label>
+    <input type="text" id="first-name" name="first-name">
+    <label for="last-name">Last name:</label>
+    <input type="text" id="last-name" name="last-name">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+
+
+    <input type="radio" id="html" name="fav_language" value="option-1">
+    <label for="option-1">Option 1</label>
+    <input type="radio" id="css" name="fav_language" value="option-2">
+    <label for="option-2">Option 2</label>
+    <input type="radio" id="javascript" name="fav_language" value="option-3">
+    <label for="option-3">Option 3</label>
+
+    <input type="submit" value="Sign up" name="subscribe" class="button">
+    <!-- OR -->
+    <button type="submit">Submit</button>
+</form>
+
+
+<!-- HR 
+    inputs:
+    - size (1x 2x 3x 4x)
+-->
+<hr class="(tailwind styling)">
+
+
+<!-- Spacer 
+    inputs:
+    - size (1x 2x 3x 4x)
+-->
+<div class="(tailwind styling)"></div>
+
+
+<!-- CTA Group 
+    inputs:
+    - headline
+    - body copy
+    - button
+-->
+<div class="cta-group">
+    <span class="headline">Headline</span>
+    <div id="cta-item-1" class="cta-item">
+        <p class="body-copy">Body Copy</p>
+        <button class="cta-button">CTA Button</button>
+    </div>
+    <hr>
+    <div id="cta-item-2" class="cta-item">
+        <p class="body-copy">Body Copy</p>
+        <button class="cta-button">CTA Button</button>
+    </div>
+    <hr>
+    <div id="cta-item-3" class="cta-item">
+        <p class="body-copy">Body Copy</p>
+        <button class="cta-button">CTA Button</button>
+    </div>
+</div>
+
+
+<!-- FAQ Card Group 
+    inputs:
+    - title / header text
+    - row size (2, 3, 4, 5...)
+    - respective questions
+    - respective answers
+-->
+
+
+<!-- Accordion Group 
+    inputs:
+    - Item title
+    - Respective content
+    - default expanded / not expanded
+-->
+<div class="accordion-group">
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+        <p>{{ content }}</p>
+    </div>
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+        <p>{{ content }}</p>
+    </div>
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+        <p>{{ content }}</p>
+    </div>
+</div>
+
+<!-- Nav Bar 
+    inputs:
+    - references (/links)
+    - ordering (?)
+-->
+<div class="navbar">
+    <ul>
+        <li><a href="{{ link }}">{{ Reference }}</a></li>
+        <li><a href="{{ link }}">{{ Reference }}</a></li>
+        <li><a href="{{ link }}">{{ Reference }}</a></li>
+    </ul>
+</div>
+
+
+<!-- Tab Group 
+    inputs:
+    - tab item title
+    - respective content  
+-->
+<div class="tab-group">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'One')">One</button>
+        <button class="tablinks" onclick="openTab(event, 'Two')">Two</button>
+        <button class="tablinks" onclick="openTab(event, 'Three')">Three</button>
+    </div>
+    
+    <div id="One" class="tabcontent">
+        <span>One</span>
+        <p>One content</p>
+    </div>
+    
+    <div id="Two" class="tabcontent">
+        <span>Two</span>
+        <p>Two content</p>
+    </div>
+    
+    <div id="Three" class="tabcontent">
+        <span>Three</span>
+        <p>Three content</p>
+    </div>
+</div>
+
+
+<!-- Slideshow (image progresses automatically)
+    inputs:
+    - media elements (reference?)
+    - text overlay (big / small)
+    - pagination style (options)
+    - animation
+    - auto advance timing
+-->
+<div class="slideshow">
+    <div class="flicity-viewport">
+        <div class="flickity-slider">
+            <div class="slideshow-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+            <div class="slideshow-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+            <div class="slideshow-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="flickity-page-dot">1</button>
+        <button type="button" class="flickity-page-dot is-selected" aria-current="step">2</button>
+        <button type="button" class="flickity-page-dot">3</button>
+    </div>
+</div>
+
+
+<!-- Carousel (user progresses images)
+    inputs:
+    - media elements
+    - text overlay (big / small)
+    - pagination style
+    - animation -->
+<div class="carousel">
+    <div class="flicity-viewport">
+        <div class="flickity-slider">
+            <div class="carousel-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+            <div class="carousel-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+            <div class="carousel-cell flickity-cell">
+                <img src="{{ media link }}" alt="{{ alt text }}">
+            </div>
+        </div>
+    </div>
+    <div>
+        <button type="button" class="flickity-page-dot">1</button>
+        <button type="button" class="flickity-page-dot is-selected" aria-current="step">2</button>
+        <button type="button" class="flickity-page-dot">3</button>
+    </div>
+</div>
+
+
+<!-- Map Embed 
+    inputs:
+    - address
+-->
+<iframe
+  width=""
+  height=""
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps/embed/v1/place?key={{API_KEY}}
+    &q={{address}}">
+</iframe>
+
+
 <!-- Hero -->
-<!-- Spacer -->
-<!-- FAQ Card Group -->
-<!-- Featured Product -->
-<!-- Featured Collection -->
-<!-- Slideshow -->
-<!-- Carousel -->
-<!-- Map Embed -->
-<!-- Hero (media) -->
+
+<div class="hero" class="{{effect selection}}">
+    <div>content</div>
+</div>
+
+<!-- Hero (media) 
+    inputs:
+    - effect selection (slitscan, ripples, morph, halftone)
+-->
+
+<div class="hero" class="{{effect selection}}">
+    <div>content</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Featured Product 
+    inputs:
+    - image
+    - text
+    - (button)
+    - product reference
+-->
+
+
+
+<!-- Featured Collection 
+    inputs:
+    - reference to collection
+    - number of items to show (2, 3, 4, 5, 6, 7, 8)
+-->
+
+<!-- Calendar 
+    inputs:
+    - default date (if not today)
+    (???)
+-->
+<div class="calendar">
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
